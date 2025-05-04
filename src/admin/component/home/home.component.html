@@ -1,0 +1,31 @@
+<ng-container *ngIf="showCharts">
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="mb-4 p-8">
+                <p-card header="Bar Chart">
+                    <p class="m-0">
+                        <app-bar-chart [chartDetails]="chartDetails"></app-bar-chart>
+                    </p>
+                </p-card>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-4 p-8">
+                <p-card header="Pie Chart">
+                    <p class="m-0">
+                        <app-pie-chart [chartDetails]="chartDetails"></app-pie-chart>
+                    </p>
+                </p-card>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-4 p-8">
+            <p-card header="Line Chart">
+                <p class="m-0">
+                    <app-line-chart [chartDetails]="chartDetails"></app-line-chart>
+                </p>
+            </p-card>
+        </div>
+    </div>
+</ng-container>

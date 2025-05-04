@@ -1,0 +1,41 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Department Details">
+        <div class="mt-5">
+            <ngx-datatable
+                class="styled-table"
+                [rows]="filteredRows"
+                [columns]="columns"
+                [columnMode]="'force'"
+                [headerHeight]="50"
+                [footerHeight]="50"
+                [rowHeight]="'auto'"
+                [scrollbarH]="true"
+                [limit]="10">
+                <ngx-datatable-column name="Department Id">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      {{ row.departmentId }}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Department Name">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      {{ row.departmentName }}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Date of Creation">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      {{ row.createdDate }}
+                    </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Status">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      <span [ngClass]="{
+                        'badge-active': row.status == '1',
+                        'badge-inactive': row.status == '0'
+                      }">
+                      </span>
+                    </ng-template>
+                </ngx-datatable-column>
+            </ngx-datatable>
+        </div>
+    </mat-tab>
+</mat-tab-group>

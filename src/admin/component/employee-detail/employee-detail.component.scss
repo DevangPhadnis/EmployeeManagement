@@ -1,0 +1,92 @@
+/* Grid Layout */
+.employee-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+    padding: 30px 40px;
+}
+
+/* Card Styling */
+.employee-card {
+    cursor: pointer;
+    width: 380px;
+    min-height: 200px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Top Color Bar */
+.card-header-bar {
+    height: 4px;
+    background-color: #3f51b5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Name */
+.employee-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 7px 0 8px 0;
+    color: #222;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+/* Content Styling */
+.employee-content {
+    padding: 0.6rem 1rem 1rem;
+}
+
+.employee-content p {
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0;
+}
+
+.employee-content p strong {
+    color: #3f51b5;
+    font-weight: 600;
+}
+
+.employee-content i {
+    margin-right: 6px;
+    color: #3f51b5;
+}
+
+/* Paginator */
+.paginator-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Optional: App background (in global styles.css maybe) */
+body {
+    background-color: #f4f6f8;
+}
+
+.status-dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.dot-active {
+    background-color: #4caf50;
+}
+
+.dot-inactive {
+    background-color: #f44336;
+}

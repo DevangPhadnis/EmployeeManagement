@@ -1,0 +1,126 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Employee Details">
+        <div class="mt-5">
+            <form [formGroup]="employee">
+                <div class="row">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Id</mat-label>
+                            <input type="number" matInput formControlName="employeeId">
+                            <mat-error *ngIf="employee?.controls?.employeeId?.errors?.['required'] 
+                        && employee?.controls?.employeeId?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee First Name</mat-label>
+                            <input type="text" matInput formControlName="employeeFirstName">
+                            <mat-error *ngIf="employee?.controls?.employeeFirstName?.errors?.['required'] 
+                        && employee?.controls?.employeeFirstName?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Employee Middle Name</mat-label>
+                            <input type="text" matInput formControlName="employeeMiddleName">
+                            <mat-error *ngIf="employee?.controls?.employeeMiddleName?.errors?.['required'] 
+                        && employee?.controls?.employeeMiddleName?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Last Name</mat-label>
+                            <input type="text" matInput formControlName="employeeLastName">
+                            <mat-error *ngIf="employee?.controls?.employeeLastName?.errors?.['required'] 
+                        && employee?.controls?.employeeLastName?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Email</mat-label>
+                            <input type="text" matInput formControlName="employeeEmail">
+                            <mat-error *ngIf="employee?.controls?.employeeEmail?.errors?.['required'] 
+                        && employee?.controls?.employeeEmail?.touched">
+                                This is a required field
+                            </mat-error>
+                            <mat-error *ngIf="employee?.controls?.employeeEmail?.errors?.['pattern'] 
+                        && employee?.controls?.employeeEmail?.touched">
+                                Please Enter a Valid Input
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Mobile Number</mat-label>
+                            <input type="text" matInput formControlName="employeeMobile" maxlength="10">
+                            <mat-error *ngIf="employee?.controls?.employeeMobile?.errors?.['required'] 
+                        && employee?.controls?.employeeMobile?.touched">
+                                This is a required field
+                            </mat-error>
+                            <mat-error *ngIf="employee?.controls?.employeeMobile?.errors?.['pattern'] 
+                        && employee?.controls?.employeeMobile?.touched">
+                                Please Enter a Valid Input
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Department</mat-label>
+                            <mat-select formControlName="employeeDepartment">
+                                <mat-option *ngFor="let department of departmentList"
+                                    [value]="department?.['departmentId']">
+                                    {{department?.['departmentName']}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="employee?.controls?.employeeDepartment?.errors?.['required'] 
+                        && employee?.controls?.employeeDepartment?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Designation</mat-label>
+                            <input type="text" matInput formControlName="employeeDesignation">
+                            <mat-error *ngIf="employee?.controls?.employeeDesignation?.errors?.['required'] 
+                        && employee?.controls?.employeeDesignation?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label class="required-field">Employee Joining Date</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="joiningDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-error *ngIf="employee?.controls?.joiningDate?.errors?.['required'] 
+                        && employee?.controls?.joiningDate?.touched">
+                                This is a required field
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div align="end" class="mt-3">
+            <button class="me-2" mat-raised-button color="primary" [disabled]="employee.invalid" (click)="onSubmit()">
+                Update
+            </button>
+        </div>
+    </mat-tab>
+</mat-tab-group>

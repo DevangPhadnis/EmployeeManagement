@@ -1,0 +1,47 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Employee Details">
+        <div class="employee-grid">
+            <div class="col-md-12 text-end">
+                <button mat-raised-button class="me-2" color="primary" (click)="addEmployee()">
+                    <mat-icon>add</mat-icon>
+                    Add Employee
+                </button>
+            </div>
+            <p-card *ngFor="let emp of employees" styleClass="employee-card">
+
+                <!-- Top color strip -->
+                <ng-template pTemplate="header">
+                    <div class="card-header-bar"></div>
+                </ng-template>
+
+                <!-- Name -->
+                <div class="employee-name cursor-pointer" (click)="onCardClick(emp)">{{ emp.firstName + " " + emp.middleName + " " + emp.lastName }}</div>
+
+                <!-- Info -->
+                
+                <div class="employee-content">
+                    <p>
+                        <p><i class="pi pi-check-circle"></i>
+                        <strong>Status:</strong>
+                        <span
+                          class="status-dot"
+                          [ngClass]="emp.status == 1 ? 'dot-active' : 'dot-inactive'"
+                          [matTooltip]="emp.status == 1 ? 'Active' : 'Inactive'"
+                        ></span>
+                    </p>
+                    <p><i class="pi pi-calendar"></i> <strong class="me-2">Joining Date:</strong> <b>{{ emp.joiningDate }}</b>
+                    </p>
+                    <p><i class="pi pi-briefcase"></i> <strong class="me-2">Department:</strong> <b> {{
+                        emp.department?.departmentName }}</b></p>
+                </div>
+
+            </p-card>
+        </div>
+
+        <!-- Paginator -->
+        <div class="paginator-container">
+            <p-paginator [rows]="rowCount" [totalRecords]="totalRecords" [pageLinkSize]="5"
+                (onPageChange)="loadEmployees($event)"></p-paginator>
+        </div>
+    </mat-tab>
+</mat-tab-group>
