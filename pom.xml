@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>EventManagement</artifactId>
+	<artifactId>EmployeeManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>EventManagement</name>
 	<description>Project for Event Management System</description>
@@ -85,6 +85,21 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.36</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>3.4.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>10.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.70</version>
+		</dependency>
 
 	</dependencies>
 
@@ -95,6 +110,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>employee-management-system</finalName>
 	</build>
 
 </project>
