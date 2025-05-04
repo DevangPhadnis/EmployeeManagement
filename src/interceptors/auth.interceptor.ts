@@ -20,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
     private messageService: MessageService
   ) {}
   
-  private startUrl: String = "http://ec2-44-222-199-39.compute-1.amazonaws.com:8080";
+  private startUrl: String = "http://localhost:8080";
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this.loaderService.show()
