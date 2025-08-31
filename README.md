@@ -36,8 +36,8 @@ Follow the steps below to set up the project locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/DevangPhadnis/CoursePurchase.git
-cd CoursePurchase
+git clone https://github.com/DevangPhadnis/EmployeeManagement.git
+cd EmployeeManagement
 ```
 
 ### 2. Backend Setup (Spring Boot)
@@ -51,15 +51,15 @@ cd CoursePurchase
 2. Create a MySQL database:
 
    ```sql
-   CREATE DATABASE coursemanagement;
+   CREATE DATABASE employeemanagement;
    ```
 
 3. Update your `application.properties` with the following values:
 
    ```properties
    # MySQL Configuration
-   spring.datasource.name = coursemanagement
-   spring.datasource.url = jdbc:mysql://localhost:3306/coursemanagement
+   spring.datasource.name = employeemanagement
+   spring.datasource.url = jdbc:mysql://localhost:3306/employeemanagement
    spring.datasource.username = root
    spring.datasource.password = root
    spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver
@@ -138,10 +138,6 @@ Make sure you have the following installed/configured:
 ---
 
 ## 🎥 Demo / Screenshots
-
-Add screenshots or demo GIFs here to showcase the application.
-
-Example:
 
 * **Login Page**
   <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/31d7066e-2a9d-4f70-872f-3ba258d2b02b" />
